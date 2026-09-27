@@ -154,13 +154,10 @@ button {
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      135deg,
-      #111 0%,
-      #080808 50%,
-      #151515 100%
-    );
+    background-image: url("images/IMG_20260817_020133_139.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   transform: scale(1.02);
 
