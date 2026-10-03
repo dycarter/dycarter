@@ -1,46 +1,78 @@
+/* ========================================
+   DYCARTER — GLOBAL
+   ======================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
+html {
+    scroll-behavior: smooth;
+    background: #000;
+}
+
 body {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #000;
-}
+    min-height: 100%;
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #000;
-}
-
-.era-intro {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
     background: #000;
     color: #fff;
-    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* ========================================
+   ERA INTRO
+   ======================================== */
+
+.era-intro {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 1000;
+
+    background: #000;
+    color: #fff;
+
+    overflow: hidden;
+
+    transition: opacity 1.4s ease;
+}
+
+.era-intro.intro-complete {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   STAR FIELD
+   ======================================== */
 
 .star-field {
     position: absolute;
     inset: 0;
+
     width: 100%;
     height: 100%;
 }
 
-/* =========================================
-   LARGE STAR FORMATION
-   ========================================= */
+
+/* ========================================
+   FORMING STAR
+   ======================================== */
 
 .forming-star {
     position: absolute;
+
     width: 300px;
-    height: 300px;
+    height: 320px;
 
     top: 50%;
     left: 50%;
@@ -66,74 +98,10 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* =========================================
-   OUTER 5 STARS
-   ========================================= */
 
-/* Top */
-.outer-1 {
-    top: 0%;
-    left: 50%;
-}
-
-/* Upper / right */
-.outer-2 {
-    top: 31%;
-    right: 0%;
-}
-
-/* Lower / right */
-.outer-3 {
-    bottom: 8%;
-    right: 19%;
-}
-
-/* Lower / left */
-.outer-4 {
-    bottom: 8%;
-    left: 19%;
-}
-
-/* Upper / left */
-.outer-5 {
-    top: 31%;
-    left: 0%;
-}
-
-
-/* =========================================
-   INNER 5 STARS
-   ========================================= */
-
-.inner-1 {
-    top: 25%;
-    left: 50%;
-}
-
-.inner-2 {
-    top: 45%;
-    right: 20%;
-}
-
-.inner-3 {
-    bottom: 27%;
-    right: 32%;
-}
-
-.inner-4 {
-    bottom: 27%;
-    left: 32%;
-}
-
-.inner-5 {
-    top: 45%;
-    left: 20%;
-}
-
-
-/* =========================================
+/* ========================================
    FINAL FOUR STARS
-   ========================================= */
+   ======================================== */
 
 .star {
     position: absolute;
@@ -144,6 +112,8 @@ body {
     line-height: 1;
 
     opacity: 0;
+
+    z-index: 5;
 }
 
 .star-top {
@@ -175,9 +145,9 @@ body {
 }
 
 
-/* =========================================
+/* ========================================
    ERA TITLE
-   ========================================= */
+   ======================================== */
 
 .era-title {
     position: absolute;
@@ -205,63 +175,428 @@ body {
     white-space: nowrap;
 
     opacity: 0;
+
+    z-index: 10;
 }
 
 
-/* =========================================
-   MOBILE
-   ========================================= */
+/* ========================================
+   DYCARTER WORLD
+   ======================================== */
 
-@media (max-width: 600px) {
+.dycarter-world {
+    position: relative;
 
-    .forming-star {
-        width: 220px;
-        height: 220px;
-    }
+    width: 100%;
 
-    .forming-star-item {
-        width: 18px;
-        height: 18px;
-
-        font-size: 18px;
-        line-height: 18px;
-    }
-
-    .star {
-        font-size: 18px;
-    }
-
-    .star-left {
-        left: 7%;
-    }
-
-    .star-right {
-        right: 7%;
-    }
-
-    .star-top {
-        top: 14%;
-    }
-
-    .star-bottom {
-        bottom: 14%;
-    }
-
-    .era-title {
-        font-size: clamp(22px, 8vw, 38px);
-        gap: 10px;
-    }
+    background: #000;
+    color: #fff;
 }
 
-/* =========================================
-   INTRO EXIT
-   ========================================= */
 
-.era-intro {
-    transition: opacity 1.4s ease;
+/* ========================================
+   SITE HEADER
+   ======================================== */
+
+.site-header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 200;
 }
 
-.era-intro.intro-complete {
+
+/* ========================================
+   LOGO
+   ======================================== */
+
+.site-logo {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* ========================================
+   MENU BUTTON
+   ======================================== */
+
+.menu-button {
+    appearance: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   MENU OVERLAY
+   ======================================== */
+
+.menu-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    background: #000;
+
+    color: #fff;
+
+    display: flex;
+
+    flex-direction: column;
+
     opacity: 0;
+
+    visibility: hidden;
+
     pointer-events: none;
+
+    transform: translateY(-20px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.5s ease;
+}
+
+
+/* ========================================
+   MENU OPEN
+   ======================================== */
+
+.menu-overlay.menu-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   MENU HEADER
+   ======================================== */
+
+.menu-header {
+    width: 100%;
+
+    padding: 30px 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-label {
+    font-size: 11px;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.menu-close {
+    appearance: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   MAIN MENU
+   ======================================== */
+
+.main-menu {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 40px 8vw;
+}
+
+.main-menu a {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: clamp(42px, 8vw, 110px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+.main-menu a:hover {
+    opacity: 0.45;
+
+    transform: translateX(12px);
+}
+
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.world-hero {
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 680px;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+/* ========================================
+   HERO IMAGE
+   ======================================== */
+
+.hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    transform: scale(1.02);
+
+    transition:
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ========================================
+   HERO OVERLAY
+   ======================================== */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.3),
+            transparent 32%,
+            transparent 65%,
+            rgba(0, 0, 0, 0.6)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   HERO META
+   ======================================== */
+
+.hero-meta {
+    position: absolute;
+
+    left: 36px;
+    bottom: 34px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    z-index: 10;
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   HERO SCROLL
+   ======================================== */
+
+.hero-scroll {
+    position: absolute;
+
+    right: 36px;
+    bottom: 34px;
+
+    z-index: 10;
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    opacity: 0.75;
+}
+
+
+/* ========================================
+   WORLD SECTIONS
+   ======================================== */
+
+.world-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #000;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.world-section span {
+    font-size: clamp(40px, 9vw, 120px);
+
+    font-weight: 400;
+
+    letter-spacing: -0.04em;
+
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   HERO HOVER
+   ======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .world-hero:hover .hero-image img {
+        transform: scale(1.06);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 22px 20px;
+    }
+
+    .menu-header {
+        padding: 22px 20px;
+    }
+
+    .main-menu {
+        padding: 30px 24px;
+    }
+
+    .main-menu a {
+        font-size: clamp(38px, 12vw, 70px);
+    }
+
+    .hero-meta {
+        left: 20px;
+        bottom: 24px;
+    }
+
+    .hero-scroll {
+        right: 20px;
+        bottom: 24px;
+    }
+
+    .world-hero {
+        min-height: 600px;
+    }
+
 }
