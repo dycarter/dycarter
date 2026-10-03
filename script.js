@@ -1,19 +1,49 @@
 // ========================================
 // DYCARTER — HAPPY DYDAY
-// ERA INTRO
+// ERA INTRO + MENU
 // ========================================
 
-const formingStars = document.querySelectorAll(".forming-star-item");
-const finalStars = document.querySelectorAll(".star");
-const eraTitle = document.querySelector(".era-title");
-const eraIntro = document.querySelector(".era-intro");
+
+const formingStars =
+    document.querySelectorAll(".forming-star-item");
+
+const finalStars =
+    document.querySelectorAll(".star");
+
+const eraTitle =
+    document.querySelector(".era-title");
+
+const eraIntro =
+    document.querySelector(".era-intro");
+
+
+// ========================================
+// MENU ELEMENTS
+// ========================================
+
+const menuButton =
+    document.querySelector(".menu-button");
+
+const menuClose =
+    document.querySelector(".menu-close");
+
+const menuOverlay =
+    document.querySelector(".menu-overlay");
+
+const menuLinks =
+    document.querySelectorAll(".main-menu a");
+
+
+// ========================================
+// INTRO STATE
+// ========================================
 
 let introFinished = false;
 let introExiting = false;
 
 
 // ========================================
-// CONFIGURAÇÃO DA ESTRELA
+// STAR CONFIGURATION
 // ========================================
 
 const centerX = 150;
@@ -22,56 +52,88 @@ const centerY = 160;
 const outerRadius = 140;
 const innerRadius = outerRadius * 0.4;
 
-const outerAngles = [0, 72, 144, 216, 288];
-const innerAngles = [36, 108, 180, 252, 324];
+const outerAngles = [
+    0,
+    72,
+    144,
+    216,
+    288
+];
+
+const innerAngles = [
+    36,
+    108,
+    180,
+    252,
+    324
+];
 
 
 // ========================================
-// CALCULAR POSIÇÕES
+// STAR POSITION
 // ========================================
 
 function getPosition(radius, angle) {
 
-    const radians = angle * Math.PI / 180;
+    const radians =
+        angle * Math.PI / 180;
 
     return {
-        x: centerX + radius * Math.sin(radians),
-        y: centerY - radius * Math.cos(radians)
+
+        x:
+            centerX +
+            radius *
+            Math.sin(radians),
+
+        y:
+            centerY -
+            radius *
+            Math.cos(radians)
+
     };
 
 }
 
 
 // ========================================
-// POSICIONAR AS 10 ESTRELAS
+// POSITION THE 10 STARS
 // ========================================
 
 formingStars.forEach((star, index) => {
 
     let position;
 
+
     if (index < 5) {
 
-        position = getPosition(
-            outerRadius,
-            outerAngles[index]
-        );
+        position =
+            getPosition(
+                outerRadius,
+                outerAngles[index]
+            );
 
     } else {
 
-        position = getPosition(
-            innerRadius,
-            innerAngles[index - 5]
-        );
+        position =
+            getPosition(
+                innerRadius,
+                innerAngles[index - 5]
+            );
 
     }
 
-    star.style.position = "absolute";
 
-    star.style.left = `${position.x}px`;
-    star.style.top = `${position.y}px`;
+    star.style.position =
+        "absolute";
 
-    star.style.opacity = "0";
+    star.style.left =
+        `${position.x}px`;
+
+    star.style.top =
+        `${position.y}px`;
+
+    star.style.opacity =
+        "0";
 
     star.style.transform =
         "translate(-50%, -50%) scale(0.2)";
@@ -80,7 +142,7 @@ formingStars.forEach((star, index) => {
 
 
 // ========================================
-// ESTADO INICIAL
+// INITIAL STATE
 // ========================================
 
 finalStars.forEach((star) => {
@@ -93,7 +155,7 @@ eraTitle.style.opacity = "0";
 
 
 // ========================================
-// 1. AS 10 ESTRELAS FORMAM A GRANDE ESTRELA
+// FORM BIG STAR
 // ========================================
 
 setTimeout(() => {
@@ -105,7 +167,8 @@ setTimeout(() => {
             star.style.transition =
                 "opacity 0.7s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1)";
 
-            star.style.opacity = "1";
+            star.style.opacity =
+                "1";
 
             star.style.transform =
                 "translate(-50%, -50%) scale(1)";
@@ -118,7 +181,7 @@ setTimeout(() => {
 
 
 // ========================================
-// 2. AS 4 ESTRELAS FINAIS APARECEM
+// SHOW FOUR FINAL STARS
 // ========================================
 
 setTimeout(() => {
@@ -130,7 +193,8 @@ setTimeout(() => {
             star.style.transition =
                 "opacity 1s ease";
 
-            star.style.opacity = "1";
+            star.style.opacity =
+                "1";
 
         }, index * 180);
 
@@ -140,7 +204,7 @@ setTimeout(() => {
 
 
 // ========================================
-// 3. HAPPY DYDAY APARECE
+// SHOW HAPPY DYDAY
 // ========================================
 
 setTimeout(() => {
@@ -148,39 +212,48 @@ setTimeout(() => {
     eraTitle.style.transition =
         "opacity 1.4s ease";
 
-    eraTitle.style.opacity = "1";
+    eraTitle.style.opacity =
+        "1";
 
-    introFinished = true;
+    introFinished =
+        true;
 
 }, 5900);
 
 
 // ========================================
-// 4. SAIR DA ERA INTRO
+// EXIT INTRO
 // ========================================
 
 function exitIntro() {
 
-    if (!introFinished || introExiting) {
+    if (
+        !introFinished ||
+        introExiting
+    ) {
+
         return;
+
     }
 
-    introExiting = true;
+
+    introExiting =
+        true;
 
 
-    // HAPPY DYDAY desaparece primeiro
+    // Hide title
 
     eraTitle.style.transition =
         "opacity 0.8s ease, transform 1s ease";
 
-    eraTitle.style.opacity = "0";
+    eraTitle.style.opacity =
+        "0";
 
     eraTitle.style.transform =
         "translate(-50%, -50%) scale(0.96)";
 
 
-    // As 10 estrelas e as 4 estrelas
-    // desaparecem depois
+    // Hide stars
 
     setTimeout(() => {
 
@@ -189,7 +262,8 @@ function exitIntro() {
             star.style.transition =
                 "opacity 1.2s ease, transform 1.2s ease";
 
-            star.style.opacity = "0";
+            star.style.opacity =
+                "0";
 
             star.style.transform =
                 "translate(-50%, -50%) scale(1.08)";
@@ -202,18 +276,21 @@ function exitIntro() {
             star.style.transition =
                 "opacity 1.2s ease";
 
-            star.style.opacity = "0";
+            star.style.opacity =
+                "0";
 
         });
 
     }, 350);
 
 
-    // Finalmente a intro inteira sai
+    // Finish intro
 
     setTimeout(() => {
 
-        eraIntro.classList.add("intro-complete");
+        eraIntro.classList.add(
+            "intro-complete"
+        );
 
     }, 1500);
 
@@ -221,52 +298,174 @@ function exitIntro() {
 
 
 // ========================================
-// CLIQUE
+// INTRO INTERACTION
 // ========================================
 
-document.addEventListener("click", () => {
-
-    exitIntro();
-
-});
-
-
-// ========================================
-// TOUCH
-// ========================================
-
-document.addEventListener("touchstart", () => {
-
-    exitIntro();
-
-}, { passive: true });
-
-
-// ========================================
-// SCROLL
-// ========================================
-
-window.addEventListener("wheel", () => {
-
-    exitIntro();
-
-}, { passive: true });
-
-
-// ========================================
-// TECLADO
-// ========================================
-
-document.addEventListener("keydown", (event) => {
-
-    if (
-        event.key === "Enter" ||
-        event.key === " " ||
-        event.key === "ArrowDown"
-    ) {
+document.addEventListener(
+    "click",
+    () => {
 
         exitIntro();
 
     }
+);
+
+
+document.addEventListener(
+    "touchstart",
+    () => {
+
+        exitIntro();
+
+    },
+    { passive: true }
+);
+
+
+window.addEventListener(
+    "wheel",
+    () => {
+
+        exitIntro();
+
+    },
+    { passive: true }
+);
+
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Enter" ||
+            event.key === " " ||
+            event.key === "ArrowDown"
+        ) {
+
+            exitIntro();
+
+        }
+
+    }
+);
+
+
+// ========================================
+// OPEN MENU
+// ========================================
+
+function openMenu() {
+
+    menuOverlay.classList.add(
+        "menu-open"
+    );
+
+    menuOverlay.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+// ========================================
+// CLOSE MENU
+// ========================================
+
+function closeMenu() {
+
+    menuOverlay.classList.remove(
+        "menu-open"
+    );
+
+    menuOverlay.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+// ========================================
+// MENU BUTTON
+// ========================================
+
+menuButton.addEventListener(
+    "click",
+    (event) => {
+
+        event.stopPropagation();
+
+        openMenu();
+
+    }
+);
+
+
+// ========================================
+// CLOSE BUTTON
+// ========================================
+
+menuClose.addEventListener(
+    "click",
+    () => {
+
+        closeMenu();
+
+    }
+);
+
+
+// ========================================
+// MENU LINKS
+// ========================================
+
+menuLinks.forEach((link) => {
+
+    link.addEventListener(
+        "click",
+        () => {
+
+            closeMenu();
+
+        }
+    );
 
 });
+
+
+// ========================================
+// ESCAPE
+// ========================================
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeMenu();
+
+        }
+
+    }
+);
