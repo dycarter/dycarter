@@ -25,13 +25,40 @@ body {
     overflow: hidden;
 }
 
-/* Four stars */
+.star-field {
+    position: absolute;
+    inset: 0;
+}
+
+/* Small stars that will form the large star */
+
+.forming-star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+}
+
+.forming-star span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    font-size: 10px;
+    line-height: 1;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+/* Four final stars */
 
 .star {
     position: absolute;
     font-size: 22px;
     line-height: 1;
     color: #fff;
+    opacity: 0;
 }
 
 .star-top {
@@ -76,4 +103,6 @@ body {
     font-weight: 500;
     letter-spacing: 0.08em;
     white-space: nowrap;
+
+    opacity: 0;
 }
