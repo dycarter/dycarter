@@ -67,6 +67,7 @@ formingStars.forEach((star, index) => {
     }
 
     star.style.position = "absolute";
+
     star.style.left = `${position.x}px`;
     star.style.top = `${position.y}px`;
 
@@ -92,7 +93,7 @@ eraTitle.style.opacity = "0";
 
 
 // ========================================
-// 1. FORMAR A GRANDE ESTRELA
+// 1. AS 10 ESTRELAS FORMAM A GRANDE ESTRELA
 // ========================================
 
 setTimeout(() => {
@@ -117,32 +118,7 @@ setTimeout(() => {
 
 
 // ========================================
-// 2. DISPERSAR A GRANDE ESTRELA
-// ========================================
-
-setTimeout(() => {
-
-    formingStars.forEach((star, index) => {
-
-        setTimeout(() => {
-
-            star.style.transition =
-                "opacity 0.8s ease, transform 1s ease";
-
-            star.style.opacity = "0";
-
-            star.style.transform =
-                "translate(-50%, -50%) scale(1.5)";
-
-        }, index * 50);
-
-    });
-
-}, 4300);
-
-
-// ========================================
-// 3. MOSTRAR AS 4 ESTRELAS
+// 2. AS 4 ESTRELAS FINAIS APARECEM
 // ========================================
 
 setTimeout(() => {
@@ -164,7 +140,7 @@ setTimeout(() => {
 
 
 // ========================================
-// 4. MOSTRAR HAPPY DYDAY
+// 3. HAPPY DYDAY APARECE
 // ========================================
 
 setTimeout(() => {
@@ -180,7 +156,7 @@ setTimeout(() => {
 
 
 // ========================================
-// 5. SAIR DA ERA INTRO
+// 4. SAIR DA ERA INTRO
 // ========================================
 
 function exitIntro() {
@@ -191,7 +167,9 @@ function exitIntro() {
 
     introExiting = true;
 
-    // O título desaparece primeiro
+
+    // HAPPY DYDAY desaparece primeiro
+
     eraTitle.style.transition =
         "opacity 0.8s ease, transform 1s ease";
 
@@ -201,9 +179,23 @@ function exitIntro() {
         "translate(-50%, -50%) scale(0.96)";
 
 
-    // As quatro estrelas continuam
-    // por mais um momento
+    // As 10 estrelas e as 4 estrelas
+    // desaparecem depois
+
     setTimeout(() => {
+
+        formingStars.forEach((star) => {
+
+            star.style.transition =
+                "opacity 1.2s ease, transform 1.2s ease";
+
+            star.style.opacity = "0";
+
+            star.style.transform =
+                "translate(-50%, -50%) scale(1.08)";
+
+        });
+
 
         finalStars.forEach((star) => {
 
@@ -217,18 +209,19 @@ function exitIntro() {
     }, 350);
 
 
-    // Depois a própria intro desaparece
+    // Finalmente a intro inteira sai
+
     setTimeout(() => {
 
         eraIntro.classList.add("intro-complete");
 
-    }, 1000);
+    }, 1500);
 
 }
 
 
 // ========================================
-// CLIQUE / TOQUE
+// CLIQUE
 // ========================================
 
 document.addEventListener("click", () => {
