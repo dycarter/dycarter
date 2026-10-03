@@ -14,6 +14,7 @@ body {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background: #000;
 }
 
 .era-intro {
@@ -28,81 +29,226 @@ body {
 .star-field {
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Small stars that will form the large star */
+/* =========================================
+   LARGE STAR FORMATION
+   ========================================= */
 
 .forming-star {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 0;
-    height: 0;
-}
+    width: 300px;
+    height: 300px;
 
-.forming-star span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #fff;
-    font-size: 10px;
-    line-height: 1;
-    opacity: 0;
+    top: 50%;
+    left: 50%;
+
     transform: translate(-50%, -50%);
 }
 
-/* Four final stars */
+.forming-star-item {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    color: #fff;
+
+    font-size: 24px;
+    line-height: 24px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translate(-50%, -50%);
+}
+
+/* =========================================
+   OUTER 5 STARS
+   ========================================= */
+
+/* Top */
+.outer-1 {
+    top: 0%;
+    left: 50%;
+}
+
+/* Upper / right */
+.outer-2 {
+    top: 31%;
+    right: 0%;
+}
+
+/* Lower / right */
+.outer-3 {
+    bottom: 8%;
+    right: 19%;
+}
+
+/* Lower / left */
+.outer-4 {
+    bottom: 8%;
+    left: 19%;
+}
+
+/* Upper / left */
+.outer-5 {
+    top: 31%;
+    left: 0%;
+}
+
+
+/* =========================================
+   INNER 5 STARS
+   ========================================= */
+
+.inner-1 {
+    top: 25%;
+    left: 50%;
+}
+
+.inner-2 {
+    top: 45%;
+    right: 20%;
+}
+
+.inner-3 {
+    bottom: 27%;
+    right: 32%;
+}
+
+.inner-4 {
+    bottom: 27%;
+    left: 32%;
+}
+
+.inner-5 {
+    top: 45%;
+    left: 20%;
+}
+
+
+/* =========================================
+   FINAL FOUR STARS
+   ========================================= */
 
 .star {
     position: absolute;
+
+    color: #fff;
+
     font-size: 22px;
     line-height: 1;
-    color: #fff;
+
     opacity: 0;
 }
 
 .star-top {
     top: 12%;
     left: 50%;
+
     transform: translateX(-50%);
 }
 
 .star-bottom {
     bottom: 12%;
     left: 50%;
+
     transform: translateX(-50%);
 }
 
 .star-left {
     left: 8%;
     top: 50%;
+
     transform: translateY(-50%);
 }
 
 .star-right {
     right: 8%;
     top: 50%;
+
     transform: translateY(-50%);
 }
 
-/* Era name */
+
+/* =========================================
+   ERA TITLE
+   ========================================= */
 
 .era-title {
     position: absolute;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 14px;
 
     color: #fff;
+
     font-size: clamp(28px, 5vw, 64px);
+
     font-weight: 500;
+
     letter-spacing: 0.08em;
+
     white-space: nowrap;
 
     opacity: 0;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .forming-star {
+        width: 220px;
+        height: 220px;
+    }
+
+    .forming-star-item {
+        width: 18px;
+        height: 18px;
+
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .star {
+        font-size: 18px;
+    }
+
+    .star-left {
+        left: 7%;
+    }
+
+    .star-right {
+        right: 7%;
+    }
+
+    .star-top {
+        top: 14%;
+    }
+
+    .star-bottom {
+        bottom: 14%;
+    }
+
+    .era-title {
+        font-size: clamp(22px, 8vw, 38px);
+        gap: 10px;
+    }
 }
