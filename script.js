@@ -1,77 +1,39 @@
-// DYCARTER — Official Website
+// DYCARTER — HAPPY DYDAY INTRO
 
-const header = document.querySelector(".site-header");
-const menuToggle = document.querySelector(".menu-toggle");
-const navigation = document.querySelector(".navigation");
+const eraIntro = document.querySelector(".era-intro");
+const stars = document.querySelectorAll(".star");
+const eraTitle = document.querySelector(".era-title");
 
-// Header changes slightly when scrolling
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
+const centerX = window.innerWidth / 2;
+const centerY = window.innerHeight / 2;
+
+// Start completely invisible
+stars.forEach((star) => {
+    star.style.opacity = "0";
+    star.style.transform = "translate(-50%, -50%) scale(0.2)";
 });
 
-// Mobile menu
-if (menuToggle && navigation) {
-    menuToggle.addEventListener("click", () => {
-        const isOpen = navigation.classList.toggle("mobile-open");
+eraTitle.style.opacity = "0";
 
-        menuToggle.classList.toggle("active", isOpen);
+// Small delay before the animation begins
+setTimeout(() => {
 
-        if (isOpen) {
-            navigation.style.display = "flex";
-            navigation.style.position = "absolute";
-            navigation.style.top = "70px";
-            navigation.style.left = "0";
-            navigation.style.right = "0";
-            navigation.style.flexDirection = "column";
-            navigation.style.alignItems = "flex-start";
-            navigation.style.gap = "24px";
-            navigation.style.padding = "30px 24px";
-            navigation.style.background = "rgba(5, 5, 5, 0.97)";
-            navigation.style.backdropFilter = "blur(20px)";
-        } else {
-            navigation.removeAttribute("style");
-        }
+    // Stars appear
+    stars.forEach((star, index) => {
+        setTimeout(() => {
+            star.style.transition = "opacity 0.6s ease, transform 1.2s ease";
+            star.style.opacity = "1";
+            star.style.transform = "translate(-50%, -50%) scale(1)";
+        }, index * 180);
     });
 
-    // Close menu after clicking a link
-    navigation.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-            navigation.classList.remove("mobile-open");
-            menuToggle.classList.remove("active");
-            navigation.removeAttribute("style");
-        });
-    });
-}
+}, 500);
 
-// Smooth reveal animation
-const revealElements = document.querySelectorAll(
-    ".section, .music-featured, .book-featured, .visual-card, .about-content, .contact-content"
-);
 
-const revealObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    },
-    {
-        threshold: 0.12
-    }
-);
+// Era title appears after the stars
+setTimeout(() => {
 
-revealElements.forEach((element) => {
-    element.classList.add("reveal");
-    revealObserver.observe(element);
-});
+    eraTitle.style.transition = "opacity 1.2s ease";
+    eraTitle.style.opacity = "1";
 
-// Respect reduced-motion settings
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.documentElement.style.scrollBehavior = "auto";
-                       }
+}, 2200);
