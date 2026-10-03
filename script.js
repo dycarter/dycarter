@@ -1,67 +1,134 @@
-// DYCARTER — HAPPY DYDAY INTRO
+// ========================================
+// DYCARTER — HAPPY DYDAY
+// STAR FORMATION
+// ========================================
 
-const formingStars = document.querySelectorAll(".forming-star span");
+const formingStars = document.querySelectorAll(".forming-star-item");
 const finalStars = document.querySelectorAll(".star");
 const eraTitle = document.querySelector(".era-title");
 
-// Positions that create a large ★ shape
-const starPositions = [
-    [0, -150],
-    [35, -45],
-    [145, -45],
-    [55, 20],
-    [90, 125],
-    [0, 60],
-    [-90, 125],
-    [-55, 20],
-    [-145, -45],
-    [-35, -45],
 
-    [0, -95],
-    [22, -28],
-    [80, -28],
-    [32, 12],
-    [50, 75],
-    [0, 35],
-    [-50, 75],
-    [-32, 12],
-    [-80, -28],
-    [-22, -28]
-];
+// ========================================
+// CONFIGURAÇÃO
+// ========================================
+
+const centerX = 150;
+const centerY = 160;
+
+const outerRadius = 140;
+const innerRadius = outerRadius * 0.4;
 
 
-// Start with everything invisible
-formingStars.forEach((star) => {
+// ========================================
+// POSIÇÕES DA ESTRELA
+// ========================================
+
+// 5 pontas externas
+const outerAngles = [0, 72, 144, 216, 288];
+
+// 5 pontos internos
+const innerAngles = [36, 108, 180, 252, 324];
+
+
+// Converte graus para posição X/Y
+function getPosition(radius, angle) {
+
+    const radians = angle * Math.PI / 180;
+
+    const x = centerX + radius * Math.sin(radians);
+    const y = centerY - radius * Math.cos(radians);
+
+    return {
+        x,
+        y
+    };
+}
+
+
+// ========================================
+// PREPARAR AS 10 ESTRELAS
+// ========================================
+
+formingStars.forEach((star, index) => {
+
+    let position;
+
+    if (index < 5) {
+
+        position = getPosition(
+            outerRadius,
+            outerAngles[index]
+        );
+
+    } else {
+
+        position = getPosition(
+            innerRadius,
+            innerAngles[index - 5]
+        );
+
+    }
+
+    star.style.position = "absolute";
+
+    star.style.left = `${position.x}px`;
+    star.style.top = `${position.y}px`;
+
+    star.style.transform =
+        "translate(-50%, -50%) scale(0.2)";
+
     star.style.opacity = "0";
-    star.style.transform = "translate(-50%, -50%) scale(0.2)";
+
 });
 
 
-// 1. Small stars appear and form the large star
+// ========================================
+// ESTADO INICIAL
+// ========================================
+
+finalStars.forEach((star) => {
+
+    star.style.opacity = "0";
+
+});
+
+eraTitle.style.opacity = "0";
+
+
+// ========================================
+// 1. ESTRELAS COMEÇAM A APARECER
+// ========================================
+
 setTimeout(() => {
 
     formingStars.forEach((star, index) => {
 
-        const [x, y] = starPositions[index];
-
         setTimeout(() => {
 
             star.style.transition =
-                "opacity 0.5s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1)";
+                "opacity 0.7s ease, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1)";
 
             star.style.opacity = "1";
 
             star.style.transform =
-                `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1)`;
+                "translate(-50%, -50%) scale(1)";
 
-        }, index * 70);
+        }, index * 120);
 
     });
 
 }, 500);
 
 
-// 2. Large star disappears
+// ========================================
+// 2. A ESTRELA FICA FORMADA
+// ========================================
+
+
+// ========================================
+// 3. AS 10 ESTRELAS SE DISPERSAM
+// ========================================
+
 setTimeout(() => {
 
     formingStars.forEach((star, index) => {
@@ -69,20 +136,24 @@ setTimeout(() => {
         setTimeout(() => {
 
             star.style.transition =
-                "opacity 0.7s ease, transform 0.8s ease";
+                "opacity 0.8s ease, transform 1s ease";
 
             star.style.opacity = "0";
-            star.style.transform =
-                "translate(-50%, -50%) scale(1.8)";
 
-        }, index * 25);
+            star.style.transform =
+                "translate(-50%, -50%) scale(1.5)";
+
+        }, index * 50);
 
     });
 
-}, 3000);
+}, 4300);
 
 
-// 3. Four stars appear
+// ========================================
+// 4. QUATRO ESTRELAS FINAIS APARECEM
+// ========================================
+
 setTimeout(() => {
 
     finalStars.forEach((star, index) => {
@@ -90,23 +161,26 @@ setTimeout(() => {
         setTimeout(() => {
 
             star.style.transition =
-                "opacity 0.8s ease, transform 1s ease";
+                "opacity 1s ease";
 
             star.style.opacity = "1";
 
-        }, index * 120);
+        }, index * 180);
 
     });
 
-}, 3700);
+}, 5000);
 
 
-// 4. HAPPY DYDAY appears
+// ========================================
+// 5. HAPPY DYDAY APARECE
+// ========================================
+
 setTimeout(() => {
 
     eraTitle.style.transition =
-        "opacity 1.2s ease";
+        "opacity 1.4s ease";
 
     eraTitle.style.opacity = "1";
 
-}, 4600);
+}, 5900);
