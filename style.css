@@ -252,3 +252,16 @@ body {
         gap: 10px;
     }
 }
+
+/* =========================================
+   INTRO EXIT
+   ========================================= */
+
+.era-intro {
+    transition: opacity 1.4s ease;
+}
+
+.era-intro.intro-complete {
+    opacity: 0;
+    pointer-events: none;
+}
