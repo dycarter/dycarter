@@ -4,14 +4,10 @@ MUSIC PAGE
 
 .music-page {
 position: relative;
-
 min-height: 100vh;
-
 background: #000;
 color: #fff;
-
 overflow: hidden;
-
 }
 
 /* ========================================
@@ -21,45 +17,31 @@ MUSIC HEADER
 .music-header {
 position: relative;
 z-index: 10;
-
 width: 100%;
-
 padding: 30px 36px;
-
 display: flex;
 align-items: center;
 justify-content: space-between;
-
 }
 
 .music-logo,
 .music-back {
 position: relative;
-
 color: #fff;
-
 text-decoration: none;
-
 font-size: 10px;
-
 font-weight: 400;
-
 letter-spacing: 0.18em;
-
 text-transform: uppercase;
-
 transition:
-    opacity 0.35s ease,
-    letter-spacing 0.35s ease;
-
+opacity 0.35s ease,
+letter-spacing 0.35s ease;
 }
 
 .music-logo:hover,
 .music-back:hover {
 opacity: 0.55;
-
 letter-spacing: 0.23em;
-
 }
 
 /* ========================================
@@ -68,62 +50,42 @@ MUSIC INTRO
 
 .music-intro {
 position: relative;
-
 padding:
-    17vh
-    8vw
-    13vh;
-
+17vh
+8vw
+13vh;
 }
 
 .music-label {
 display: block;
-
 margin-bottom: 34px;
-
 font-size: 9px;
-
 font-weight: 400;
-
 letter-spacing: 0.24em;
-
 text-transform: uppercase;
-
 opacity: 0.45;
-
 }
 
 .music-intro h1 {
 margin: 0;
-
 font-size:
-    clamp(
-        90px,
-        17vw,
-        240px
-    );
-
+clamp(
+90px,
+17vw,
+240px
+);
 font-weight: 400;
-
 line-height: 0.76;
-
 letter-spacing: -0.075em;
-
 text-transform: uppercase;
-
 }
 
 .music-intro p {
 margin: 42px 0 0;
-
 font-size: 9px;
-
 letter-spacing: 0.24em;
-
 text-transform: uppercase;
-
 opacity: 0.42;
-
 }
 
 /* ========================================
@@ -132,12 +94,10 @@ MUSIC CATALOG
 
 .music-catalog {
 width: 100%;
-
 padding:
-    0
-    8vw
-    15vh;
-
+0
+8vw
+15vh;
 }
 
 /* ========================================
@@ -146,16 +106,12 @@ RELEASE
 
 .music-release {
 position: relative;
-
 width: 100%;
-
 border-top:
-    1px solid
-    rgba(255, 255, 255, 0.18);
-
+1px solid
+rgba(255, 255, 255, 0.18);
 transition:
-    border-color 0.45s ease;
-
+border-color 0.45s ease;
 }
 
 .music-release:last-child {
@@ -170,47 +126,30 @@ RELEASE TRIGGER
 
 .release-trigger {
 appearance: none;
-
 width: 100%;
-
 min-height: 150px;
-
 padding: 32px 0;
-
 margin: 0;
-
 border: 0;
-
 background: transparent;
-
 color: #fff;
-
 font: inherit;
-
 display: grid;
-
 grid-template-columns:
-    70px
-    minmax(0, 1fr)
-    90px;
-
+70px
+minmax(0, 1fr)
+90px;
 align-items: center;
-
 gap: 30px;
-
 text-align: left;
-
 cursor: pointer;
-
 }
 
 .release-trigger:focus-visible {
 outline:
 1px solid
 rgba(255, 255, 255, 0.7);
-
 outline-offset: 8px;
-
 }
 
 /* ========================================
@@ -219,19 +158,13 @@ RELEASE NUMBER
 
 .release-number {
 align-self: start;
-
 padding-top: 7px;
-
 font-size: 9px;
-
 letter-spacing: 0.18em;
-
 opacity: 0.35;
-
 transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-
+opacity 0.4s ease,
+transform 0.4s ease;
 }
 
 /* ========================================
@@ -240,63 +173,44 @@ RELEASE INFO
 
 .release-info {
 min-width: 0;
-
 display: block;
-
 }
 
 .release-title {
 display: block;
-
 font-size:
-    clamp(
-        38px,
-        6vw,
-        86px
-    );
-
+clamp(
+38px,
+6vw,
+86px
+);
 font-weight: 400;
-
 line-height: 0.9;
-
 letter-spacing: -0.055em;
-
 white-space: nowrap;
-
 overflow: hidden;
-
 text-overflow: ellipsis;
-
 transition:
-    transform 0.45s cubic-bezier(
-        0.16,
-        1,
-        0.3,
-        1
-    ),
-    opacity 0.45s ease;
-
+transform 0.45s cubic-bezier(
+0.16,
+1,
+0.3,
+1
+),
+opacity 0.45s ease;
 }
 
 .release-meta {
 display: block;
-
 margin-top: 18px;
-
 font-size: 9px;
-
 font-weight: 400;
-
 letter-spacing: 0.2em;
-
 text-transform: uppercase;
-
 opacity: 0.4;
-
 transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
-
+opacity 0.35s ease,
+transform 0.35s ease;
 }
 
 /* ========================================
@@ -305,24 +219,16 @@ VIEW
 
 .release-open {
 justify-self: end;
-
 font-size: 9px;
-
 font-weight: 400;
-
 letter-spacing: 0.2em;
-
 text-transform: uppercase;
-
 white-space: nowrap;
-
 opacity: 0.55;
-
 transition:
-    opacity 0.35s ease,
-    letter-spacing 0.35s ease,
-    transform 0.35s ease;
-
+opacity 0.35s ease,
+letter-spacing 0.35s ease,
+transform 0.35s ease;
 }
 
 /* ========================================
@@ -336,31 +242,23 @@ RELEASE HOVER
         rgba(255, 255, 255, 0.4);
 }
 
-
 .music-release:hover .release-number {
     opacity: 0.75;
-
     transform: translateX(4px);
 }
-
 
 .music-release:hover .release-title {
     transform: translateX(8px);
 }
 
-
 .music-release:hover .release-meta {
     opacity: 0.7;
-
     transform: translateX(8px);
 }
 
-
 .music-release:hover .release-open {
     opacity: 1;
-
     letter-spacing: 0.28em;
-
     transform: translateX(-4px);
 }
 
@@ -377,9 +275,7 @@ rgba(255, 255, 255, 0.45);
 
 .music-release.is-open .release-open {
 opacity: 1;
-
 letter-spacing: 0.24em;
-
 }
 
 /* ========================================
@@ -388,11 +284,9 @@ RELEASE PANEL
 
 .release-panel {
 width: 100%;
-
 border-top:
-    1px solid
-    rgba(255, 255, 255, 0.08);
-
+1px solid
+rgba(255, 255, 255, 0.08);
 }
 
 .release-panel[hidden] {
@@ -413,15 +307,10 @@ PANEL HEADING
 
 .release-panel-heading {
 margin-bottom: 34px;
-
 font-size: 11px;
-
 letter-spacing: 0.2em;
-
 text-transform: uppercase;
-
 opacity: 0.45;
-
 }
 
 /* ========================================
@@ -430,17 +319,11 @@ RELEASE OPTIONS
 
 .release-options {
 display: flex;
-
 align-items: center;
-
 gap: 30px;
-
 margin-bottom: 38px;
-
 overflow-x: auto;
-
 scrollbar-width: none;
-
 }
 
 .release-options::-webkit-scrollbar {
@@ -449,33 +332,20 @@ display: none;
 
 .release-option {
 appearance: none;
-
 flex: 0 0 auto;
-
 padding: 0;
-
 border: 0;
-
 background: transparent;
-
 color: #fff;
-
 font: inherit;
-
 font-size: 9px;
-
 letter-spacing: 0.2em;
-
 text-transform: uppercase;
-
 opacity: 0.35;
-
 cursor: pointer;
-
 transition:
-    opacity 0.3s ease,
-    letter-spacing 0.3s ease;
-
+opacity 0.3s ease,
+letter-spacing 0.3s ease;
 }
 
 .release-option:hover {
@@ -484,9 +354,7 @@ opacity: 0.75;
 
 .release-option.active {
 opacity: 1;
-
 letter-spacing: 0.25em;
-
 }
 
 /* ========================================
@@ -494,17 +362,15 @@ RELEASE CONTENT
 ======================================== */
 
 .release-content {
-max-width: 700px;
+max-width: 900px;
 }
 
 .release-content-section {
 display: none;
-
 animation:
-    releaseContentIn
-    0.35s ease
-    both;
-
+releaseContentIn
+0.35s ease
+both;
 }
 
 .release-content-section.active {
@@ -515,14 +381,12 @@ display: block;
 
 from {
     opacity: 0;
-
     transform:
         translateY(8px);
 }
 
 to {
     opacity: 1;
-
     transform:
         translateY(0);
 }
@@ -535,32 +399,108 @@ CONTENT LABEL
 
 .content-label {
 display: block;
-
-margin-bottom: 20px;
-
+margin-bottom: 26px;
 font-size: 8px;
-
 letter-spacing: 0.22em;
-
 text-transform: uppercase;
-
 opacity: 0.35;
-
 }
+
+/* ========================================
+GENERAL CONTENT
+======================================== */
 
 .release-content-section p {
 margin: 0;
-
 max-width: 600px;
-
 font-size: 13px;
-
 line-height: 1.8;
-
 letter-spacing: 0.02em;
-
 color: rgba(255, 255, 255, 0.72);
+}
 
+/* ========================================
+METADATA
+======================================== */
+
+.metadata-grid {
+width: 100%;
+max-width: 900px;
+display: grid;
+grid-template-columns:
+repeat(
+2,
+minmax(0, 1fr)
+);
+column-gap: 90px;
+row-gap: 64px;
+}
+
+.metadata-group {
+min-width: 0;
+}
+
+.metadata-role {
+display: block;
+margin-bottom: 22px;
+font-size: 8px;
+font-weight: 400;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+opacity: 0.32;
+}
+
+.metadata-credit {
+display: flex;
+flex-direction: column;
+gap: 7px;
+margin-bottom: 24px;
+}
+
+.metadata-credit:last-child {
+margin-bottom: 0;
+}
+
+.metadata-name {
+display: block;
+font-size: 16px;
+font-weight: 400;
+line-height: 1.3;
+letter-spacing: -0.015em;
+color: rgba(255, 255, 255, 0.9);
+}
+
+.metadata-function {
+display: block;
+font-size: 9px;
+font-weight: 400;
+line-height: 1.5;
+letter-spacing: 0.13em;
+text-transform: uppercase;
+color: rgba(255, 255, 255, 0.38);
+}
+
+.metadata-legal {
+padding-top: 4px;
+}
+
+.metadata-copyright {
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin-top: 26px;
+padding-top: 22px;
+border-top:
+1px solid
+rgba(255, 255, 255, 0.08);
+}
+
+.metadata-copyright span {
+font-size: 8px;
+line-height: 1.5;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: rgba(255, 255, 255, 0.3);
 }
 
 /* ========================================
@@ -569,29 +509,20 @@ MUSIC FOOTER
 
 .music-footer {
 width: 100%;
-
 padding:
-    30px
-    8vw
-    40px;
-
+30px
+8vw
+40px;
 display: flex;
-
 align-items: center;
 justify-content: space-between;
-
 border-top:
-    1px solid
-    rgba(255, 255, 255, 0.12);
-
+1px solid
+rgba(255, 255, 255, 0.12);
 font-size: 9px;
-
 letter-spacing: 0.2em;
-
 text-transform: uppercase;
-
 opacity: 0.35;
-
 }
 
 /* ========================================
@@ -606,14 +537,11 @@ MUSIC PAGE MOBILE
         20px;
 }
 
-
 .music-logo,
 .music-back {
     font-size: 9px;
-
     letter-spacing: 0.16em;
 }
-
 
 .music-intro {
     padding:
@@ -622,15 +550,11 @@ MUSIC PAGE MOBILE
         11vh;
 }
 
-
 .music-label {
     margin-bottom: 27px;
-
     font-size: 8px;
-
     letter-spacing: 0.2em;
 }
-
 
 .music-intro h1 {
     font-size:
@@ -639,21 +563,15 @@ MUSIC PAGE MOBILE
             23vw,
             125px
         );
-
     line-height: 0.78;
 }
 
-
 .music-intro p {
     margin-top: 30px;
-
     font-size: 8px;
-
     line-height: 1.6;
-
     letter-spacing: 0.18em;
 }
-
 
 .music-catalog {
     padding:
@@ -662,29 +580,22 @@ MUSIC PAGE MOBILE
         11vh;
 }
 
-
 .release-trigger {
     grid-template-columns:
         32px
         minmax(0, 1fr)
         48px;
-
     gap: 12px;
-
     min-height: 125px;
-
     padding:
         27px
         0;
 }
 
-
 .release-number {
     padding-top: 4px;
-
     font-size: 8px;
 }
-
 
 .release-title {
     font-size:
@@ -693,28 +604,20 @@ MUSIC PAGE MOBILE
             8.5vw,
             48px
         );
-
     letter-spacing: -0.045em;
 }
 
-
 .release-meta {
     margin-top: 12px;
-
     font-size: 7px;
-
     line-height: 1.5;
-
     letter-spacing: 0.16em;
 }
 
-
 .release-open {
     font-size: 7px;
-
     letter-spacing: 0.15em;
 }
-
 
 .release-panel-inner {
     padding:
@@ -724,48 +627,81 @@ MUSIC PAGE MOBILE
         44px;
 }
 
-
 .release-panel-heading {
     margin-bottom: 26px;
-
     font-size: 9px;
 }
 
-
 .release-options {
     gap: 22px;
-
     margin-bottom: 30px;
 }
 
-
 .release-option {
     font-size: 7px;
-
     letter-spacing: 0.16em;
 }
-
 
 .release-option.active {
     letter-spacing: 0.2em;
 }
 
-
 .release-content-section p {
     font-size: 12px;
-
     line-height: 1.7;
 }
 
+/* ====================================
+   METADATA MOBILE
+   ==================================== */
+
+.metadata-grid {
+    grid-template-columns:
+        minmax(0, 1fr);
+    column-gap: 0;
+    row-gap: 42px;
+    max-width: 100%;
+}
+
+.metadata-role {
+    margin-bottom: 17px;
+    font-size: 7px;
+    letter-spacing: 0.18em;
+}
+
+.metadata-credit {
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.metadata-name {
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.metadata-function {
+    font-size: 7px;
+    line-height: 1.55;
+    letter-spacing: 0.11em;
+}
+
+.metadata-copyright {
+    gap: 7px;
+    margin-top: 21px;
+    padding-top: 18px;
+}
+
+.metadata-copyright span {
+    font-size: 7px;
+    letter-spacing: 0.12em;
+}
 
 .music-footer {
     padding:
         25px
         20px
         32px;
-
     font-size: 7px;
-
     letter-spacing: 0.16em;
 }
 
@@ -781,34 +717,40 @@ VERY SMALL SCREENS
     padding-top: 12vh;
 }
 
-
 .music-intro h1 {
     font-size: 67px;
 }
-
 
 .release-trigger {
     grid-template-columns:
         26px
         minmax(0, 1fr)
         42px;
-
     gap: 9px;
 }
-
 
 .release-title {
     font-size: 25px;
 }
 
-
 .release-open {
     font-size: 6.5px;
 }
-
 
 .release-panel-inner {
     padding-left: 35px;
 }
 
+.metadata-grid {
+    row-gap: 36px;
 }
+
+.metadata-name {
+    font-size: 13px;
+}
+
+.metadata-function {
+    font-size: 6.5px;
+}
+
+    }
