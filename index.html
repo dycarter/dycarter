@@ -1,197 +1,542 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ========================================
+   DYCARTER — GLOBAL
+   ======================================== */
 
-<head>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <meta charset="UTF-8">
+html {
+    scroll-behavior: smooth;
+    background: #000;
+}
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+body {
+    width: 100%;
+    min-height: 100%;
 
-    <title>DYCARTER</title>
+    background: #000;
+    color: #fff;
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-</head>
 
+/* ========================================
+   ERA INTRO
+   ======================================== */
 
-<body>
+.era-intro {
+    position: fixed;
+    inset: 0;
 
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
 
-    <!-- =====================================
-         ERA INTRO
-         ===================================== -->
+    z-index: 1000;
 
-    <main class="era-intro">
+    background: #000;
+    color: #fff;
 
-        <div
-            class="star-field"
-            aria-hidden="true"
-        >
+    overflow: hidden;
 
-            <div class="forming-star">
+    transition: opacity 1.4s ease;
+}
 
-                <span class="forming-star-item outer outer-1">★</span>
-                <span class="forming-star-item outer outer-2">★</span>
-                <span class="forming-star-item outer outer-3">★</span>
-                <span class="forming-star-item outer outer-4">★</span>
-                <span class="forming-star-item outer outer-5">★</span>
+.era-intro.intro-complete {
+    opacity: 0;
+    pointer-events: none;
+}
 
-                <span class="forming-star-item inner inner-1">★</span>
-                <span class="forming-star-item inner inner-2">★</span>
-                <span class="forming-star-item inner inner-3">★</span>
-                <span class="forming-star-item inner inner-4">★</span>
-                <span class="forming-star-item inner inner-5">★</span>
 
-            </div>
+/* ========================================
+   STAR FIELD
+   ======================================== */
 
+.star-field {
+    position: absolute;
+    inset: 0;
 
-            <span class="star star-top">★</span>
-            <span class="star star-left">★</span>
-            <span class="star star-right">★</span>
-            <span class="star star-bottom">★</span>
+    width: 100%;
+    height: 100%;
+}
 
-        </div>
 
+/* ========================================
+   FORMING STAR
+   ======================================== */
 
-        <div class="era-title">
+.forming-star {
+    position: absolute;
 
-            <span>HAPPY</span>
-            <span>DYDAY</span>
+    width: 300px;
+    height: 320px;
 
-        </div>
+    top: 50%;
+    left: 50%;
 
-    </main>
+    transform: translate(-50%, -50%);
+}
 
+.forming-star-item {
+    position: absolute;
 
+    width: 24px;
+    height: 24px;
 
-    <!-- =====================================
-         GLOBAL HEADER
-         ===================================== -->
+    color: #fff;
 
-    <header class="site-header">
+    font-size: 24px;
+    line-height: 24px;
 
-        <a
-            href="./"
-            class="site-logo"
-        >
-            DYCARTER
-        </a>
+    text-align: center;
 
+    opacity: 0;
 
-        <button
-            class="menu-button"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-        >
-            MENU
-        </button>
+    transform: translate(-50%, -50%);
+}
 
-    </header>
 
+/* ========================================
+   FINAL FOUR STARS
+   ======================================== */
 
+.star {
+    position: absolute;
 
-    <!-- =====================================
-         DYCARTER WORLD
-         ===================================== -->
+    color: #fff;
 
-    <main class="dycarter-world">
+    font-size: 22px;
+    line-height: 1;
 
+    opacity: 0;
 
-        <!-- =================================
-             FULLSCREEN MENU
-             ================================= -->
+    z-index: 5;
+}
 
-        <div
-            class="menu-overlay"
-            aria-hidden="true"
-        >
+.star-top {
+    top: 12%;
+    left: 50%;
 
-            <div class="menu-header">
+    transform: translateX(-50%);
+}
 
-                <span class="menu-label">
-                    MENU
-                </span>
+.star-bottom {
+    bottom: 12%;
+    left: 50%;
 
+    transform: translateX(-50%);
+}
 
-                <button
-                    class="menu-close"
-                    type="button"
-                    aria-label="Close menu"
-                >
-                    CLOSE
-                </button>
+.star-left {
+    left: 8%;
+    top: 50%;
 
-            </div>
+    transform: translateY(-50%);
+}
 
+.star-right {
+    right: 8%;
+    top: 50%;
 
-            <nav class="main-menu">
+    transform: translateY(-50%);
+}
 
-                <a href="music/">
-                    MUSIC
-                </a>
 
-                <a href="shop/">
-                    SHOP
-                </a>
+/* ========================================
+   ERA TITLE
+   ======================================== */
 
-                <a href="books/">
-                    BOOKS
-                </a>
+.era-title {
+    position: absolute;
 
-                <a href="visuals/">
-                    VISUALS
-                </a>
+    top: 50%;
+    left: 50%;
 
-                <a href="about/">
-                    ABOUT
-                </a>
+    transform: translate(-50%, -50%);
 
-                <a href="contact/">
-                    CONTACT
-                </a>
+    display: flex;
 
-            </nav>
+    align-items: center;
+    justify-content: center;
 
-        </div>
+    gap: 14px;
 
+    color: #fff;
 
+    font-size: clamp(28px, 5vw, 64px);
 
-        <!-- =================================
-             INTERACTIVE HOME GALLERY
-             ================================= -->
+    font-weight: 500;
 
-        <section class="world-gallery">
+    letter-spacing: 0.08em;
 
+    white-space: nowrap;
 
-            <article class="gallery-item gallery-item-main">
+    opacity: 0;
 
-                <div class="gallery-image">
+    z-index: 10;
+}
 
-                    <img
-                        src="images/IMG_20260817_020133_139.webp"
-                        alt="DYCARTER"
-                    >
 
-                </div>
+/* ========================================
+   DYCARTER WORLD
+   ======================================== */
 
-            </article>
+.dycarter-world {
+    position: relative;
 
+    width: 100%;
 
-        </section>
+    background: #000;
+    color: #fff;
+}
 
 
-    </main>
+/* ========================================
+   GLOBAL SITE HEADER
+   ======================================== */
 
+.site-header {
+    position: fixed;
 
-    <script src="script.js"></script>
+    top: 0;
+    left: 0;
 
-</body>
+    width: 100%;
 
-</html>
+    padding: 30px 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 900;
+
+    pointer-events: none;
+}
+
+.site-header > * {
+    pointer-events: auto;
+}
+
+
+/* ========================================
+   LOGO
+   ======================================== */
+
+.site-logo {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* ========================================
+   MENU BUTTON
+   ======================================== */
+
+.menu-button {
+    appearance: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   MENU OVERLAY
+   ======================================== */
+
+.menu-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 950;
+
+    background: #000;
+
+    color: #fff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(-20px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.5s ease;
+}
+
+
+/* ========================================
+   MENU OPEN
+   ======================================== */
+
+.menu-overlay.menu-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   MENU HEADER
+   ======================================== */
+
+.menu-header {
+    width: 100%;
+
+    padding: 30px 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-label {
+    font-size: 11px;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.menu-close {
+    appearance: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #fff;
+
+    padding: 0;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   MAIN MENU
+   ======================================== */
+
+.main-menu {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 40px 8vw;
+}
+
+.main-menu a {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: clamp(42px, 8vw, 110px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.045em;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+.main-menu a:hover {
+    opacity: 0.45;
+
+    transform: translateX(12px);
+}
+
+
+/* ========================================
+   INTERACTIVE HOME GALLERY
+   ======================================== */
+
+.world-gallery {
+    position: relative;
+
+    width: 100vw;
+
+    height: 100vh;
+    height: 100dvh;
+
+    background: #000;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   GALLERY ITEM
+   ======================================== */
+
+.gallery-item {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+
+/* ========================================
+   GALLERY IMAGE
+   ======================================== */
+
+.gallery-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.gallery-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transform: scale(1.02);
+
+    transition:
+        transform 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ========================================
+   GALLERY HOVER
+   ======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .gallery-item:hover .gallery-image img {
+        transform: scale(1.06);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 22px 20px;
+    }
+
+
+    .menu-header {
+        padding: 22px 20px;
+    }
+
+
+    .main-menu {
+        padding: 30px 24px;
+    }
+
+
+    .main-menu a {
+        font-size: clamp(38px, 12vw, 70px);
+    }
+
+
+    .world-gallery {
+        width: 100vw;
+
+        height: 100vh;
+        height: 100dvh;
+    }
+
+
+    .gallery-item {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .gallery-image {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .gallery-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+    }
+
+}
