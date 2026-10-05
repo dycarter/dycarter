@@ -1,1 +1,236 @@
+/* ========================================
+   MUSIC PAGE
+   ======================================== */
 
+.music-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    background: #000;
+    color: #fff;
+}
+
+
+/* ========================================
+   MUSIC HEADER
+   ======================================== */
+
+.music-header {
+    width: 100%;
+
+    padding: 30px 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.music-logo,
+.music-back {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   MUSIC INTRO
+   ======================================== */
+
+.music-intro {
+    padding: 15vh 8vw 10vh;
+}
+
+
+.music-label {
+    display: block;
+
+    margin-bottom: 30px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+
+.music-intro h1 {
+    margin: 0;
+
+    font-size: clamp(70px, 15vw, 190px);
+
+    font-weight: 400;
+
+    line-height: 0.82;
+
+    letter-spacing: -0.065em;
+}
+
+
+.music-intro p {
+    margin-top: 28px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+
+/* ========================================
+   MUSIC CATALOG
+   ======================================== */
+
+.music-catalog {
+    width: 100%;
+
+    padding: 0 8vw 12vh;
+}
+
+
+.music-release {
+    display: grid;
+
+    grid-template-columns: 80px 1fr auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 30px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.music-release:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.release-number {
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.45;
+}
+
+
+.release-info h2 {
+    margin: 0;
+
+    font-size: clamp(28px, 4vw, 58px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+
+.release-info span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    opacity: 0.5;
+}
+
+
+.release-open {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    transition: opacity 0.3s ease;
+}
+
+
+.release-open:hover {
+    opacity: 0.45;
+}
+
+
+/* ========================================
+   MUSIC PAGE MOBILE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    .music-header {
+        padding: 22px 20px;
+    }
+
+
+    .music-intro {
+        padding:
+            13vh
+            20px
+            9vh;
+    }
+
+
+    .music-intro h1 {
+        font-size: clamp(64px, 20vw, 110px);
+    }
+
+
+    .music-catalog {
+        padding:
+            0
+            20px
+            10vh;
+    }
+
+
+    .music-release {
+        grid-template-columns:
+            35px
+            1fr
+            auto;
+
+        gap: 15px;
+
+        padding: 26px 0;
+    }
+
+
+    .release-info h2 {
+        font-size: clamp(24px, 8vw, 42px);
+    }
+
+
+    .release-open {
+        font-size: 9px;
+    }
+
+}
