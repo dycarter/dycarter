@@ -1,18 +1,29 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<head>
 
-<title>MUSIC — DYCARTER</title>
+    <meta charset="UTF-8">
 
-<link
-    rel="stylesheet"
-    href="../style.css"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-</head><body><main class="music-page">
+    <title>MUSIC — DYCARTER</title>
+
+    <link
+        rel="stylesheet"
+        href="../style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<main class="music-page">
 
 
     <!-- =====================================
@@ -68,136 +79,618 @@
          MUSIC CATALOG
          ===================================== -->
 
-    <section class="music-catalog">
+    <section
+        class="music-catalog"
+        aria-label="DYCARTER music catalog"
+    >
 
 
-        <!-- GOOD BOY -->
+        <!-- =================================
+             GOOD BOY
+             ================================= -->
 
-        <article class="music-release">
+        <article
+            class="music-release"
+            data-release="good-boy"
+        >
 
-            <div class="release-number">
-                01
-            </div>
+            <button
+                class="release-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="release-good-boy"
+            >
 
-
-            <div class="release-info">
-
-                <h2>
-                    GOOD BOY
-                </h2>
-
-                <span>
-                    SINGLE · 2025
+                <span class="release-number">
+                    01
                 </span>
 
-            </div>
+
+                <span class="release-info">
+
+                    <span class="release-title">
+                        GOOD BOY
+                    </span>
+
+                    <span class="release-meta">
+                        SINGLE · 2025
+                    </span>
+
+                </span>
 
 
-            <a
-                href="good-boy/"
-                class="release-open"
+                <span
+                    class="release-open"
+                    aria-hidden="true"
+                >
+                    VIEW
+                </span>
+
+            </button>
+
+
+
+            <div
+                class="release-panel"
+                id="release-good-boy"
+                hidden
             >
-                VIEW
-            </a>
+
+                <div class="release-panel-inner">
+
+                    <div class="release-panel-heading">
+                        GOOD BOY
+                    </div>
+
+
+                    <nav
+                        class="release-options"
+                        aria-label="Good Boy options"
+                    >
+
+                        <button
+                            type="button"
+                            class="release-option active"
+                            data-option="lyrics"
+                        >
+                            LYRICS
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="release-option"
+                            data-option="metadata"
+                        >
+                            METADATA
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="release-option"
+                            data-option="listen"
+                        >
+                            LISTEN NOW
+                        </button>
+
+                    </nav>
+
+
+                    <div class="release-content">
+
+
+                        <div
+                            class="release-content-section active"
+                            data-content="lyrics"
+                        >
+
+                            <span class="content-label">
+                                LYRICS
+                            </span>
+
+                            <p>
+                                Lyrics for this release will appear here.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="release-content-section"
+                            data-content="metadata"
+                        >
+
+                            <span class="content-label">
+                                METADATA
+                            </span>
+
+                            <p>
+                                Single · 2025
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="release-content-section"
+                            data-content="listen"
+                        >
+
+                            <span class="content-label">
+                                LISTEN NOW
+                            </span>
+
+                            <p>
+                                Streaming links will appear here.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </article>
 
 
 
-        <!-- ON AND ON -->
+        <!-- =================================
+             ON AND ON
+             ================================= -->
 
-        <article class="music-release">
+        <article
+            class="music-release"
+            data-release="on-and-on"
+        >
 
-            <div class="release-number">
-                02
-            </div>
+            <button
+                class="release-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="release-on-and-on"
+            >
 
-
-            <div class="release-info">
-
-                <h2>
-                    ON AND ON
-                </h2>
-
-                <span>
-                    SINGLE · 2025
+                <span class="release-number">
+                    02
                 </span>
 
-            </div>
+
+                <span class="release-info">
+
+                    <span class="release-title">
+                        ON AND ON
+                    </span>
+
+                    <span class="release-meta">
+                        SINGLE · 2025
+                    </span>
+
+                </span>
 
 
-            <a
-                href="on-and-on/"
-                class="release-open"
+                <span
+                    class="release-open"
+                    aria-hidden="true"
+                >
+                    VIEW
+                </span>
+
+            </button>
+
+
+
+            <div
+                class="release-panel"
+                id="release-on-and-on"
+                hidden
             >
-                VIEW
-            </a>
+
+                <div class="release-panel-inner">
+
+                    <div class="release-panel-heading">
+                        ON AND ON
+                    </div>
+
+
+                    <nav
+                        class="release-options"
+                        aria-label="On and On options"
+                    >
+
+                        <button
+                            type="button"
+                            class="release-option active"
+                            data-option="lyrics"
+                        >
+                            LYRICS
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="release-option"
+                            data-option="metadata"
+                        >
+                            METADATA
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="release-option"
+                            data-option="listen"
+                        >
+                            LISTEN NOW
+                        </button>
+
+                    </nav>
+
+
+                    <div class="release-content">
+
+
+                        <div
+                            class="release-content-section active"
+                            data-content="lyrics"
+                        >
+
+                            <span class="content-label">
+                                LYRICS
+                            </span>
+
+                            <p>
+                                Lyrics for this release will appear here.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="release-content-section"
+                            data-content="metadata"
+                        >
+
+                            <span class="content-label">
+                                METADATA
+                            </span>
+
+                            <p>
+                                Single · 2025
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="release-content-section"
+                            data-content="listen"
+                        >
+
+                            <span class="content-label">
+                                LISTEN NOW
+                            </span>
+
+                            <p>
+                                Streaming links will appear here.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </article>
 
 
 
-        <!-- JUST FOR FUN -->
+        <!-- =================================
+             JUST FOR FUN
+             ================================= -->
 
-        <article class="music-release">
+        <article
+            class="music-release"
+            data-release="just-for-fun"
+        >
 
-            <div class="release-number">
-                03
-            </div>
+            <button
+                class="release-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="release-just-for-fun"
+            >
 
-
-            <div class="release-info">
-
-                <h2>
-                    JUST FOR FUN
-                </h2>
-
-                <span>
-                    SINGLE · 2025
+                <span class="release-number">
+                    03
                 </span>
 
-            </div>
+
+                <span class="release-info">
+
+                    <span class="release-title">
+                        JUST FOR FUN
+                    </span>
+
+                    <span class="release-meta">
+                        SINGLE · 2025
+                    </span>
+
+                </span>
 
 
-            <a
-                href="just-for-fun/"
-                class="release-open"
+                <span
+                    class="release-open"
+                    aria-hidden="true"
+                >
+                    VIEW
+                </span>
+
+            </button>
+
+
+
+            <div
+                class="release-panel"
+                id="release-just-for-fun"
+                hidden
             >
-                VIEW
-            </a>
+
+                <div class="release-panel-inner">
+
+                    <div class="release-panel-heading">
+                        JUST FOR FUN
+                    </div>
+
+
+                    <nav
+                        class="release-options"
+                        aria-label="Just For Fun options"
+                    >
+
+                        <button
+                            type="button"
+                            class="release-option active"
+                            data-option="lyrics"
+                        >
+                            LYRICS
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="release-option"
+                            data-option="metadata"
+                        >
+                            METADATA
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="release-option"
+                            data-option="listen"
+                        >
+                            LISTEN NOW
+                        </button>
+
+                    </nav>
+
+
+                    <div class="release-content">
+
+
+                        <div
+                            class="release-content-section active"
+                            data-content="lyrics"
+                        >
+
+                            <span class="content-label">
+                                LYRICS
+                            </span>
+
+                            <p>
+                                Lyrics for this release will appear here.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="release-content-section"
+                            data-content="metadata"
+                        >
+
+                            <span class="content-label">
+                                METADATA
+                            </span>
+
+                            <p>
+                                Single · 2025
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="release-content-section"
+                            data-content="listen"
+                        >
+
+                            <span class="content-label">
+                                LISTEN NOW
+                            </span>
+
+                            <p>
+                                Streaming links will appear here.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </article>
 
 
 
-        <!-- NIRVANA SUMMER -->
+        <!-- =================================
+             NIRVANA SUMMER
+             ================================= -->
 
-        <article class="music-release">
+        <article
+            class="music-release"
+            data-release="nirvana-summer"
+        >
 
-            <div class="release-number">
-                04
-            </div>
+            <button
+                class="release-trigger"
+                type="button"
+                aria-expanded="false"
+                aria-controls="release-nirvana-summer"
+            >
 
-
-            <div class="release-info">
-
-                <h2>
-                    NIRVANA SUMMER
-                </h2>
-
-                <span>
-                    SINGLE · 2026
+                <span class="release-number">
+                    04
                 </span>
 
-            </div>
+
+                <span class="release-info">
+
+                    <span class="release-title">
+                        NIRVANA SUMMER
+                    </span>
+
+                    <span class="release-meta">
+                        SINGLE · 2026
+                    </span>
+
+                </span>
 
 
-            <a
-                href="nirvana-summer/"
-                class="release-open"
+                <span
+                    class="release-open"
+                    aria-hidden="true"
+                >
+                    VIEW
+                </span>
+
+            </button>
+
+
+
+            <div
+                class="release-panel"
+                id="release-nirvana-summer"
+                hidden
             >
-                VIEW
-            </a>
+
+                <div class="release-panel-inner">
+
+                    <div class="release-panel-heading">
+                        NIRVANA SUMMER
+                    </div>
+
+
+                    <nav
+                        class="release-options"
+                        aria-label="Nirvana Summer options"
+                    >
+
+                        <button
+                            type="button"
+                            class="release-option active"
+                            data-option="lyrics"
+                        >
+                            LYRICS
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="release-option"
+                            data-option="metadata"
+                        >
+                            METADATA
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="release-option"
+                            data-option="listen"
+                        >
+                            LISTEN NOW
+                        </button>
+
+                    </nav>
+
+
+                    <div class="release-content">
+
+
+                        <div
+                            class="release-content-section active"
+                            data-content="lyrics"
+                        >
+
+                            <span class="content-label">
+                                LYRICS
+                            </span>
+
+                            <p>
+                                Lyrics for this release will appear here.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="release-content-section"
+                            data-content="metadata"
+                        >
+
+                            <span class="content-label">
+                                METADATA
+                            </span>
+
+                            <p>
+                                Single · 2026
+                            </p>
+
+                        </div>
+
+
+                        <div class="release-content-section"
+                            data-content="listen"
+                        >
+
+                            <span class="content-label">
+                                LISTEN NOW
+                            </span>
+
+                            <p>
+                                Streaming links will appear here.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </article>
 
@@ -226,4 +719,138 @@
 
 </main>
 
-</body></html>
+
+
+<!-- =====================================
+     MUSIC INTERACTION
+     ===================================== -->
+
+<script>
+
+(function () {
+
+    const releases =
+        document.querySelectorAll(
+            ".music-release"
+        );
+
+
+    releases.forEach(function (release) {
+
+        const trigger =
+            release.querySelector(
+                ".release-trigger"
+            );
+
+
+        const panel =
+            release.querySelector(
+                ".release-panel"
+            );
+
+
+        const options =
+            release.querySelectorAll(
+                ".release-option"
+            );
+
+
+        const contentSections =
+            release.querySelectorAll(
+                ".release-content-section"
+            );
+
+
+        trigger.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    trigger.getAttribute(
+                        "aria-expanded"
+                    ) === "true";
+
+
+                releases.forEach(
+                    function (otherRelease) {
+
+                        if (
+                            otherRelease !== release
+                        ) {
+
+                            const otherTrigger =
+                                otherRelease.querySelector(
+                                    ".release-trigger"
+                                );
+
+
+                            const otherPanel =
+                                otherRelease.querySelector(
+                                    ".release-panel"
+                                );
+
+
+                            otherTrigger.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+
+                            otherPanel.hidden = true;
+
+                            otherRelease.classList.remove(
+                                "is-open"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                if (isOpen) {
+
+                    trigger.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    panel.hidden = true;
+
+                    release.classList.remove(
+                        "is-open"
+                    );
+
+                } else {
+
+                    trigger.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+
+                    panel.hidden = false;
+
+                    release.classList.add(
+                        "is-open"
+                    );
+
+                }
+
+            }
+        );
+
+
+        options.forEach(
+            function (option) {
+
+                option.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.stopPropagation();
+
+
+                        const selectedOption =
+                            option.dataset
