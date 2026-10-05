@@ -1,236 +1,229 @@
-/* ========================================
-   MUSIC PAGE
-   ======================================== */
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 
-.music-page {
-    position: relative;
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    min-height: 100vh;
+<title>MUSIC — DYCARTER</title>
 
-    background: #000;
-    color: #fff;
-}
+<link
+    rel="stylesheet"
+    href="../style.css"
+>
 
+</head><body><main class="music-page">
 
-/* ========================================
-   MUSIC HEADER
-   ======================================== */
 
-.music-header {
-    width: 100%;
+    <!-- =====================================
+         MUSIC HEADER
+         ===================================== -->
 
-    padding: 30px 36px;
+    <header class="music-header">
 
-    display: flex;
+        <a
+            href="../"
+            class="music-logo"
+        >
+            DYCARTER
+        </a>
 
-    align-items: center;
-    justify-content: space-between;
-}
 
+        <a
+            href="../"
+            class="music-back"
+        >
+            BACK
+        </a>
 
-.music-logo,
-.music-back {
-    color: #fff;
+    </header>
 
-    text-decoration: none;
 
-    font-size: 11px;
 
-    letter-spacing: 0.16em;
+    <!-- =====================================
+         MUSIC INTRO
+         ===================================== -->
 
-    text-transform: uppercase;
-}
+    <section class="music-intro">
 
+        <span class="music-label">
+            DYCARTER
+        </span>
 
-/* ========================================
-   MUSIC INTRO
-   ======================================== */
 
-.music-intro {
-    padding: 15vh 8vw 10vh;
-}
+        <h1>
+            MUSIC
+        </h1>
 
 
-.music-label {
-    display: block;
+        <p>
+            THE SOUND OF THE CURRENT ERA
+        </p>
 
-    margin-bottom: 30px;
+    </section>
 
-    font-size: 10px;
 
-    letter-spacing: 0.18em;
 
-    text-transform: uppercase;
+    <!-- =====================================
+         MUSIC CATALOG
+         ===================================== -->
 
-    opacity: 0.6;
-}
+    <section class="music-catalog">
 
 
-.music-intro h1 {
-    margin: 0;
+        <!-- GOOD BOY -->
 
-    font-size: clamp(70px, 15vw, 190px);
+        <article class="music-release">
 
-    font-weight: 400;
+            <div class="release-number">
+                01
+            </div>
 
-    line-height: 0.82;
 
-    letter-spacing: -0.065em;
-}
+            <div class="release-info">
 
+                <h2>
+                    GOOD BOY
+                </h2>
 
-.music-intro p {
-    margin-top: 28px;
+                <span>
+                    SINGLE · 2025
+                </span>
 
-    font-size: 11px;
+            </div>
 
-    letter-spacing: 0.18em;
 
-    text-transform: uppercase;
+            <a
+                href="good-boy/"
+                class="release-open"
+            >
+                VIEW
+            </a>
 
-    opacity: 0.55;
-}
+        </article>
 
 
-/* ========================================
-   MUSIC CATALOG
-   ======================================== */
 
-.music-catalog {
-    width: 100%;
+        <!-- ON AND ON -->
 
-    padding: 0 8vw 12vh;
-}
+        <article class="music-release">
 
+            <div class="release-number">
+                02
+            </div>
 
-.music-release {
-    display: grid;
 
-    grid-template-columns: 80px 1fr auto;
+            <div class="release-info">
 
-    align-items: center;
+                <h2>
+                    ON AND ON
+                </h2>
 
-    gap: 30px;
+                <span>
+                    SINGLE · 2025
+                </span>
 
-    padding: 30px 0;
+            </div>
 
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
-}
 
+            <a
+                href="on-and-on/"
+                class="release-open"
+            >
+                VIEW
+            </a>
 
-.music-release:last-child {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
+        </article>
 
 
-.release-number {
-    font-size: 10px;
 
-    letter-spacing: 0.12em;
+        <!-- JUST FOR FUN -->
 
-    opacity: 0.45;
-}
+        <article class="music-release">
 
+            <div class="release-number">
+                03
+            </div>
 
-.release-info h2 {
-    margin: 0;
 
-    font-size: clamp(28px, 4vw, 58px);
+            <div class="release-info">
 
-    font-weight: 400;
+                <h2>
+                    JUST FOR FUN
+                </h2>
 
-    line-height: 1;
+                <span>
+                    SINGLE · 2025
+                </span>
 
-    letter-spacing: -0.04em;
-}
+            </div>
 
 
-.release-info span {
-    display: block;
+            <a
+                href="just-for-fun/"
+                class="release-open"
+            >
+                VIEW
+            </a>
 
-    margin-top: 10px;
+        </article>
 
-    font-size: 10px;
 
-    letter-spacing: 0.14em;
 
-    text-transform: uppercase;
+        <!-- NIRVANA SUMMER -->
 
-    opacity: 0.5;
-}
+        <article class="music-release">
 
+            <div class="release-number">
+                04
+            </div>
 
-.release-open {
-    color: #fff;
 
-    text-decoration: none;
+            <div class="release-info">
 
-    font-size: 10px;
+                <h2>
+                    NIRVANA SUMMER
+                </h2>
 
-    letter-spacing: 0.15em;
+                <span>
+                    SINGLE · 2026
+                </span>
 
-    text-transform: uppercase;
+            </div>
 
-    transition: opacity 0.3s ease;
-}
 
+            <a
+                href="nirvana-summer/"
+                class="release-open"
+            >
+                VIEW
+            </a>
 
-.release-open:hover {
-    opacity: 0.45;
-}
+        </article>
 
 
-/* ========================================
-   MUSIC PAGE MOBILE
-   ======================================== */
+    </section>
 
-@media (max-width: 700px) {
 
-    .music-header {
-        padding: 22px 20px;
-    }
 
+    <!-- =====================================
+         MUSIC FOOTER
+         ===================================== -->
 
-    .music-intro {
-        padding:
-            13vh
-            20px
-            9vh;
-    }
+    <footer class="music-footer">
 
+        <span>
+            DYCARTER
+        </span>
 
-    .music-intro h1 {
-        font-size: clamp(64px, 20vw, 110px);
-    }
 
+        <span>
+            MUSIC
+        </span>
 
-    .music-catalog {
-        padding:
-            0
-            20px
-            10vh;
-    }
+    </footer>
 
 
-    .music-release {
-        grid-template-columns:
-            35px
-            1fr
-            auto;
+</main>
 
-        gap: 15px;
-
-        padding: 26px 0;
-    }
-
-
-    .release-info h2 {
-        font-size: clamp(24px, 8vw, 42px);
-    }
-
-
-    .release-open {
-        font-size: 9px;
-    }
-
-}
+</body></html>
