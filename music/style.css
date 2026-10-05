@@ -96,11 +96,12 @@ opacity: 0.45;
 .music-intro h1 {
 margin: 0;
 
-font-size: clamp(
-    90px,
-    17vw,
-    240px
-);
+font-size:
+    clamp(
+        90px,
+        17vw,
+        240px
+    );
 
 font-weight: 400;
 
@@ -139,8 +140,52 @@ padding:
 
 }
 
+/* ========================================
+RELEASE
+======================================== */
+
 .music-release {
 position: relative;
+
+width: 100%;
+
+border-top:
+    1px solid
+    rgba(255, 255, 255, 0.18);
+
+transition:
+    border-color 0.45s ease;
+
+}
+
+.music-release:last-child {
+border-bottom:
+1px solid
+rgba(255, 255, 255, 0.18);
+}
+
+/* ========================================
+RELEASE TRIGGER
+======================================== */
+
+.release-trigger {
+appearance: none;
+
+width: 100%;
+
+min-height: 150px;
+
+padding: 32px 0;
+
+margin: 0;
+
+border: 0;
+
+background: transparent;
+
+color: #fff;
+
+font: inherit;
 
 display: grid;
 
@@ -153,24 +198,19 @@ align-items: center;
 
 gap: 30px;
 
-min-height: 150px;
+text-align: left;
 
-padding: 32px 0;
-
-border-top:
-    1px solid
-    rgba(255, 255, 255, 0.18);
-
-transition:
-    padding 0.45s ease,
-    border-color 0.45s ease;
+cursor: pointer;
 
 }
 
-.music-release:last-child {
-border-bottom:
+.release-trigger:focus-visible {
+outline:
 1px solid
-rgba(255, 255, 255, 0.18);
+rgba(255, 255, 255, 0.7);
+
+outline-offset: 8px;
+
 }
 
 /* ========================================
@@ -195,21 +235,25 @@ transition:
 }
 
 /* ========================================
-RELEASE INFORMATION
+RELEASE INFO
 ======================================== */
 
 .release-info {
 min-width: 0;
+
+display: block;
+
 }
 
-.release-info h2 {
-margin: 0;
+.release-title {
+display: block;
 
-font-size: clamp(
-    38px,
-    6vw,
-    86px
-);
+font-size:
+    clamp(
+        38px,
+        6vw,
+        86px
+    );
 
 font-weight: 400;
 
@@ -234,12 +278,14 @@ transition:
 
 }
 
-.release-info span {
+.release-meta {
 display: block;
 
 margin-top: 18px;
 
 font-size: 9px;
+
+font-weight: 400;
 
 letter-spacing: 0.2em;
 
@@ -254,17 +300,15 @@ transition:
 }
 
 /* ========================================
-RELEASE LINK
+VIEW
 ======================================== */
 
 .release-open {
 justify-self: end;
 
-color: #fff;
-
-text-decoration: none;
-
 font-size: 9px;
+
+font-weight: 400;
 
 letter-spacing: 0.2em;
 
@@ -281,15 +325,6 @@ transition:
 
 }
 
-.release-open:hover {
-opacity: 1;
-
-letter-spacing: 0.28em;
-
-transform: translateX(-4px);
-
-}
-
 /* ========================================
 RELEASE HOVER
 ======================================== */
@@ -297,8 +332,6 @@ RELEASE HOVER
 @media (hover: hover) and (pointer: fine) {
 
 .music-release:hover {
-    padding-left: 18px;
-
     border-top-color:
         rgba(255, 255, 255, 0.4);
 }
@@ -311,16 +344,222 @@ RELEASE HOVER
 }
 
 
-.music-release:hover .release-info h2 {
+.music-release:hover .release-title {
     transform: translateX(8px);
 }
 
 
-.music-release:hover .release-info span {
+.music-release:hover .release-meta {
     opacity: 0.7;
 
     transform: translateX(8px);
 }
+
+
+.music-release:hover .release-open {
+    opacity: 1;
+
+    letter-spacing: 0.28em;
+
+    transform: translateX(-4px);
+}
+
+}
+
+/* ========================================
+OPEN RELEASE
+======================================== */
+
+.music-release.is-open {
+border-top-color:
+rgba(255, 255, 255, 0.45);
+}
+
+.music-release.is-open .release-open {
+opacity: 1;
+
+letter-spacing: 0.24em;
+
+}
+
+/* ========================================
+RELEASE PANEL
+======================================== */
+
+.release-panel {
+width: 100%;
+
+border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+}
+
+.release-panel[hidden] {
+display: none;
+}
+
+.release-panel-inner {
+padding:
+46px
+0
+58px
+70px;
+}
+
+/* ========================================
+PANEL HEADING
+======================================== */
+
+.release-panel-heading {
+margin-bottom: 34px;
+
+font-size: 11px;
+
+letter-spacing: 0.2em;
+
+text-transform: uppercase;
+
+opacity: 0.45;
+
+}
+
+/* ========================================
+RELEASE OPTIONS
+======================================== */
+
+.release-options {
+display: flex;
+
+align-items: center;
+
+gap: 30px;
+
+margin-bottom: 38px;
+
+overflow-x: auto;
+
+scrollbar-width: none;
+
+}
+
+.release-options::-webkit-scrollbar {
+display: none;
+}
+
+.release-option {
+appearance: none;
+
+flex: 0 0 auto;
+
+padding: 0;
+
+border: 0;
+
+background: transparent;
+
+color: #fff;
+
+font: inherit;
+
+font-size: 9px;
+
+letter-spacing: 0.2em;
+
+text-transform: uppercase;
+
+opacity: 0.35;
+
+cursor: pointer;
+
+transition:
+    opacity 0.3s ease,
+    letter-spacing 0.3s ease;
+
+}
+
+.release-option:hover {
+opacity: 0.75;
+}
+
+.release-option.active {
+opacity: 1;
+
+letter-spacing: 0.25em;
+
+}
+
+/* ========================================
+RELEASE CONTENT
+======================================== */
+
+.release-content {
+max-width: 700px;
+}
+
+.release-content-section {
+display: none;
+
+animation:
+    releaseContentIn
+    0.35s ease
+    both;
+
+}
+
+.release-content-section.active {
+display: block;
+}
+
+@keyframes releaseContentIn {
+
+from {
+    opacity: 0;
+
+    transform:
+        translateY(8px);
+}
+
+to {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+}
+
+/* ========================================
+CONTENT LABEL
+======================================== */
+
+.content-label {
+display: block;
+
+margin-bottom: 20px;
+
+font-size: 8px;
+
+letter-spacing: 0.22em;
+
+text-transform: uppercase;
+
+opacity: 0.35;
+
+}
+
+.release-content-section p {
+margin: 0;
+
+max-width: 600px;
+
+font-size: 13px;
+
+line-height: 1.8;
+
+letter-spacing: 0.02em;
+
+color: rgba(255, 255, 255, 0.72);
 
 }
 
@@ -362,7 +601,9 @@ MUSIC PAGE MOBILE
 @media (max-width: 700px) {
 
 .music-header {
-    padding: 22px 20px;
+    padding:
+        22px
+        20px;
 }
 
 
@@ -422,7 +663,7 @@ MUSIC PAGE MOBILE
 }
 
 
-.music-release {
+.release-trigger {
     grid-template-columns:
         32px
         minmax(0, 1fr)
@@ -432,7 +673,9 @@ MUSIC PAGE MOBILE
 
     min-height: 125px;
 
-    padding: 27px 0;
+    padding:
+        27px
+        0;
 }
 
 
@@ -443,7 +686,7 @@ MUSIC PAGE MOBILE
 }
 
 
-.release-info h2 {
+.release-title {
     font-size:
         clamp(
             27px,
@@ -455,7 +698,7 @@ MUSIC PAGE MOBILE
 }
 
 
-.release-info span {
+.release-meta {
     margin-top: 12px;
 
     font-size: 7px;
@@ -470,6 +713,48 @@ MUSIC PAGE MOBILE
     font-size: 7px;
 
     letter-spacing: 0.15em;
+}
+
+
+.release-panel-inner {
+    padding:
+        34px
+        0
+        42px
+        44px;
+}
+
+
+.release-panel-heading {
+    margin-bottom: 26px;
+
+    font-size: 9px;
+}
+
+
+.release-options {
+    gap: 22px;
+
+    margin-bottom: 30px;
+}
+
+
+.release-option {
+    font-size: 7px;
+
+    letter-spacing: 0.16em;
+}
+
+
+.release-option.active {
+    letter-spacing: 0.2em;
+}
+
+
+.release-content-section p {
+    font-size: 12px;
+
+    line-height: 1.7;
 }
 
 
@@ -502,7 +787,7 @@ VERY SMALL SCREENS
 }
 
 
-.music-release {
+.release-trigger {
     grid-template-columns:
         26px
         minmax(0, 1fr)
@@ -512,13 +797,18 @@ VERY SMALL SCREENS
 }
 
 
-.release-info h2 {
+.release-title {
     font-size: 25px;
 }
 
 
 .release-open {
     font-size: 6.5px;
+}
+
+
+.release-panel-inner {
+    padding-left: 35px;
 }
 
 }
