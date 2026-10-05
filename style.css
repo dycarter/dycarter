@@ -34,6 +34,7 @@ body {
 
     width: 100%;
     height: 100vh;
+    height: 100dvh;
 
     z-index: 1000;
 
@@ -195,7 +196,7 @@ body {
 
 
 /* ========================================
-   SITE HEADER
+   GLOBAL SITE HEADER
    ======================================== */
 
 .site-header {
@@ -213,7 +214,13 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    z-index: 200;
+    z-index: 900;
+
+    pointer-events: none;
+}
+
+.site-header > * {
+    pointer-events: auto;
 }
 
 
@@ -270,7 +277,7 @@ body {
 
     inset: 0;
 
-    z-index: 500;
+    z-index: 950;
 
     background: #000;
 
@@ -400,17 +407,32 @@ body {
 
 
 /* ========================================
-   HERO
+   INTERACTIVE HOME GALLERY
    ======================================== */
 
-.world-hero {
+.world-gallery {
+    position: relative;
+
+    width: 100vw;
+
+    height: 100vh;
+    height: 100dvh;
+
+    background: #000;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   GALLERY ITEM
+   ======================================== */
+
+.gallery-item {
     position: relative;
 
     width: 100%;
-
-    height: 100vh;
-
-    min-height: 680px;
+    height: 100%;
 
     overflow: hidden;
 
@@ -419,10 +441,10 @@ body {
 
 
 /* ========================================
-   HERO IMAGE
+   GALLERY IMAGE
    ======================================== */
 
-.hero-image {
+.gallery-image {
     position: absolute;
 
     inset: 0;
@@ -433,15 +455,15 @@ body {
     overflow: hidden;
 }
 
-.hero-image img {
+.gallery-image img {
+    display: block;
+
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 
     object-position: center;
-
-    display: block;
 
     transform: scale(1.02);
 
@@ -451,112 +473,12 @@ body {
 
 
 /* ========================================
-   HERO OVERLAY
-   ======================================== */
-
-.hero-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.3),
-            transparent 32%,
-            transparent 65%,
-            rgba(0, 0, 0, 0.6)
-        );
-
-    pointer-events: none;
-}
-
-
-/* ========================================
-   HERO META
-   ======================================== */
-
-.hero-meta {
-    position: absolute;
-
-    left: 36px;
-    bottom: 34px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 6px;
-
-    z-index: 10;
-
-    font-size: 10px;
-
-    letter-spacing: 0.16em;
-
-    text-transform: uppercase;
-}
-
-
-/* ========================================
-   HERO SCROLL
-   ======================================== */
-
-.hero-scroll {
-    position: absolute;
-
-    right: 36px;
-    bottom: 34px;
-
-    z-index: 10;
-
-    font-size: 10px;
-
-    letter-spacing: 0.16em;
-
-    text-transform: uppercase;
-
-    opacity: 0.75;
-}
-
-
-/* ========================================
-   WORLD SECTIONS
-   ======================================== */
-
-.world-section {
-    position: relative;
-
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: #000;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.world-section span {
-    font-size: clamp(40px, 9vw, 120px);
-
-    font-weight: 400;
-
-    letter-spacing: -0.04em;
-
-    text-transform: uppercase;
-}
-
-
-/* ========================================
-   HERO HOVER
+   GALLERY HOVER
    ======================================== */
 
 @media (hover: hover) and (pointer: fine) {
 
-    .world-hero:hover .hero-image img {
+    .gallery-item:hover .gallery-image img {
         transform: scale(1.06);
     }
 
@@ -573,30 +495,48 @@ body {
         padding: 22px 20px;
     }
 
+
     .menu-header {
         padding: 22px 20px;
     }
+
 
     .main-menu {
         padding: 30px 24px;
     }
 
+
     .main-menu a {
         font-size: clamp(38px, 12vw, 70px);
     }
 
-    .hero-meta {
-        left: 20px;
-        bottom: 24px;
+
+    .world-gallery {
+        width: 100vw;
+
+        height: 100vh;
+        height: 100dvh;
     }
 
-    .hero-scroll {
-        right: 20px;
-        bottom: 24px;
+
+    .gallery-item {
+        width: 100%;
+        height: 100%;
     }
 
-    .world-hero {
-        min-height: 600px;
+
+    .gallery-image {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .gallery-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
     }
 
 }
