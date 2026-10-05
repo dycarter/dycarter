@@ -189,6 +189,7 @@ body {
     position: relative;
 
     width: 100%;
+    min-height: 100vh;
 
     background: #000;
     color: #fff;
@@ -238,6 +239,9 @@ body {
     font-weight: 700;
 
     letter-spacing: 0.18em;
+
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -265,6 +269,9 @@ body {
     letter-spacing: 0.14em;
 
     text-transform: uppercase;
+
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -276,6 +283,9 @@ body {
     position: fixed;
 
     inset: 0;
+
+    width: 100%;
+    height: 100%;
 
     z-index: 950;
 
@@ -301,11 +311,6 @@ body {
         visibility 0.5s ease;
 }
 
-
-/* ========================================
-   MENU OPEN
-   ======================================== */
-
 .menu-overlay.menu-open {
     opacity: 1;
 
@@ -330,6 +335,8 @@ body {
 
     align-items: center;
     justify-content: space-between;
+
+    flex-shrink: 0;
 }
 
 .menu-label {
@@ -379,6 +386,8 @@ body {
     align-items: flex-start;
 
     padding: 40px 8vw;
+
+    overflow-y: auto;
 }
 
 .main-menu a {
@@ -413,10 +422,12 @@ body {
 .world-gallery {
     position: relative;
 
-    width: 100vw;
-
+    width: 100%;
     height: 100vh;
     height: 100dvh;
+
+    margin: 0;
+    padding: 0;
 
     background: #000;
 
@@ -429,10 +440,15 @@ body {
    ======================================== */
 
 .gallery-item {
-    position: relative;
+    position: absolute;
+
+    inset: 0;
 
     width: 100%;
     height: 100%;
+
+    margin: 0;
+    padding: 0;
 
     overflow: hidden;
 
@@ -452,18 +468,40 @@ body {
     width: 100%;
     height: 100%;
 
+    margin: 0;
+    padding: 0;
+
     overflow: hidden;
+
+    background: #000;
 }
 
+
+/* ========================================
+   GALLERY IMAGE — FULL FRAME
+   ======================================== */
+
 .gallery-image img {
+    position: absolute;
+
+    inset: 0;
+
     display: block;
 
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
 
-    object-position: center;
+    max-width: none;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: cover;
+    object-position: center center;
 
     transform: scale(1.02);
 
@@ -482,6 +520,178 @@ body {
         transform: scale(1.06);
     }
 
+}
+
+
+/* ========================================
+   MUSIC PAGE
+   ======================================== */
+
+.music-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: #000;
+    color: #fff;
+}
+
+
+/* ========================================
+   MUSIC HEADER
+   ======================================== */
+
+.music-header {
+    width: 100%;
+
+    padding: 30px 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.music-logo,
+.music-back {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   MUSIC INTRO
+   ======================================== */
+
+.music-intro {
+    padding: 15vh 8vw 10vh;
+}
+
+.music-label {
+    display: block;
+
+    margin-bottom: 30px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+.music-intro h1 {
+    margin: 0;
+
+    font-size: clamp(70px, 15vw, 190px);
+
+    font-weight: 400;
+
+    line-height: 0.82;
+
+    letter-spacing: -0.065em;
+}
+
+.music-intro p {
+    margin-top: 28px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+
+/* ========================================
+   MUSIC CATALOG
+   ======================================== */
+
+.music-catalog {
+    width: 100%;
+
+    padding: 0 8vw 12vh;
+}
+
+.music-release {
+    display: grid;
+
+    grid-template-columns: 80px 1fr auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 30px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.music-release:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.release-number {
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.45;
+}
+
+.release-info h2 {
+    margin: 0;
+
+    font-size: clamp(28px, 4vw, 58px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+.release-info span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    opacity: 0.5;
+}
+
+.release-open {
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    transition: opacity 0.3s ease;
+}
+
+.release-open:hover {
+    opacity: 0.45;
 }
 
 
@@ -512,7 +722,7 @@ body {
 
 
     .world-gallery {
-        width: 100vw;
+        width: 100%;
 
         height: 100vh;
         height: 100dvh;
@@ -535,8 +745,55 @@ body {
         width: 100%;
         height: 100%;
 
+        min-width: 100%;
+        min-height: 100%;
+
+        max-width: none;
+        max-height: none;
+
         object-fit: cover;
-        object-position: center;
+        object-position: center center;
+    }
+
+
+    /* MUSIC */
+
+    .music-header {
+        padding: 22px 20px;
+    }
+
+
+    .music-intro {
+        padding: 13vh 20px 9vh;
+    }
+
+
+    .music-intro h1 {
+        font-size: clamp(64px, 20vw, 110px);
+    }
+
+
+    .music-catalog {
+        padding: 0 20px 10vh;
+    }
+
+
+    .music-release {
+        grid-template-columns: 35px 1fr auto;
+
+        gap: 15px;
+
+        padding: 26px 0;
+    }
+
+
+    .release-info h2 {
+        font-size: clamp(24px, 8vw, 42px);
+    }
+
+
+    .release-open {
+        font-size: 9px;
     }
 
 }
